@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class Posts extends Controller
@@ -11,7 +12,7 @@ class Posts extends Controller
      */
     public function index()
     {
-        $posts = [['id' => 1], ['id' => 2]];
+        $posts = Post::all();
         return view('posts.index', [
             'posts' => $posts,
             'some' => 100,
@@ -39,7 +40,7 @@ class Posts extends Controller
      */
     public function show(string $id)
     {
-        //
+        return 1;
     }
 
     /**
